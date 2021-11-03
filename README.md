@@ -1,15 +1,48 @@
-# 👷 `worker-template` Hello World
 
-A template for kick starting a Cloudflare worker project.
+### Cloudflare Internship Project
+-------------
+Backend api: https://my-worker.alex-leventis1.workers.dev
 
-[`index.js`](https://github.com/cloudflare/worker-template/blob/master/index.js) is the content of the Workers script.
+Front end: https://cloudflare-frontend-dj1.pages.dev/
 
-#### Wrangler
 
-To generate using [wrangler](https://github.com/cloudflare/wrangler)
+GET posts/
 
+`https://my-worker.alex-leventis1.workers.dev/posts`
+ - Returns all posts stored in [cloudflares KV db system](https://developers.cloudflare.com/workers/runtime-apis/kv)
 ```
-wrangler generate projectname https://github.com/cloudflare/worker-template
+[
+    {
+        "title": "Initial",
+        "username": "alex",
+        "content": "Not the prettiest... but",
+        "id": "1"
+    },
+    {
+        "title": "Post2",
+        "username": "alex",
+        "content": "Just Aother post (:",
+        "id": "3"
+    },
+]
 ```
+POST posts/
+ - Puts post into db, returns request, id is auto generated
+```
+{
+    "title": "Title 3",
+    "username": "its me",
+    "content": "Just Aother post (:",
+    "id": "5"
+}
+```
+DELETE posts/:id
+ - Deletes post by id if present, 404 not found if no post with id x
+ ```
+ Post Deleted || Post id '12':  not found
+ ```
+
+
+
 
 Further documentation for Wrangler can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler).
