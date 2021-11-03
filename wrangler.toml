@@ -1,0 +1,14 @@
+name = "my-worker"
+type = "webpack"
+
+account_id = "51a8a425be8ce6ec98366930973baa06"
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-11-02"
+webpack_config = "webpack.config.js"
+
+kv_namespaces = [ 
+    { binding = "MY_KV", preview_id = "495ea7fb8b644342b71a3f918bbf01ef", id = "5ec3953606234f8bb6450df654c8c7f9" }
+]
+
